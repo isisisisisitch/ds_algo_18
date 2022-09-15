@@ -1,4 +1,6 @@
-package ca.bytetube._03_list;
+package ca.bytetube._03_list._single;
+
+import ca.bytetube._03_list.AbstractList;
 
 /**
  * @author dal

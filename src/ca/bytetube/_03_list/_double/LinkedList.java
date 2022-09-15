@@ -1,4 +1,6 @@
-package ca.bytetube._03_list;
+package ca.bytetube._03_list._double;
+
+import ca.bytetube._03_list.AbstractList;
 
 public class LinkedList<E> extends AbstractList<E> {
 
@@ -81,7 +83,14 @@ public class LinkedList<E> extends AbstractList<E> {
 
     @Override
     public E set(int index, E element) {
-        return null;
+        rangeCheck(index);
+
+        Node<E> node = node(index);
+        E oldVal = node.value;
+
+        node.value = element;
+
+        return oldVal;
     }
 
     @Override
@@ -103,8 +112,42 @@ public class LinkedList<E> extends AbstractList<E> {
 
     @Override
     public int indexOf(E element) {
-        return 0;
+        if (element == null) {
+            Node<E> node = first;
+            for (int i = 0; i < size; i++) {
+
+                if (node.value == null) return i;
+                node = node.next;
+
+            }
+
+        } else {
+            Node<E> node = first;
+            for (int i = 0; i < size; i++) {
+                if (element.equals(node.value)) return i;
+                node = node.next;
+            }
+        }
+
+        return ELEMENT_NOT_FOUND;
     }
 
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("size: ").append(size).append(",{");
+        Node<E> node = first;
+        for (int i = 0; i < size; i++) {
+            sb.append(node.value);
+            node = node.next;
+            if (i != size - 1) {
+                sb.append(",");
+            }
+
+        }
+        sb.append("}");
+        return sb.toString();
+    }
 
 }

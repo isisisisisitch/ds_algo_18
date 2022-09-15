@@ -1,6 +1,6 @@
 package ca.bytetube._03_list;
 
-abstract class AbstractList<E> implements List<E> {
+ public abstract class AbstractList<E> implements List<E> {
     protected int size;//有效元素的个数
 
 
