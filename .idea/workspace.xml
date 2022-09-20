@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_double/DoubleCircularLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_single/SingleCircularLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/SortColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/DivideList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/GetFirstInsertionNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_03_list/AbstructList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/AbstractList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_03_list/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_single/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_03_list/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_double/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_03_list/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_03_list/SingleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_single/SingleLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_double/DoubleCircularLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_03_list/_double/DoubleCircularLinkedList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +65,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="Application.DivideList">
+    <configuration name="DivideList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._01_list.DivideList" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._00_leetcode._01_list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FibonacciNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._01_complexity.FibonacciNumber" />
       <module name="ds_algo_18" />
@@ -95,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._01_complexity.Main" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._03_list.Main" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._01_complexity.*" />
+          <option name="PATTERN" value="ca.bytetube._03_list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,12 +131,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SortColors" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.SortColors" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DivideList" />
+        <item itemvalue="Application.SortColors" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.FibonacciNumber" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +172,8 @@
       <workItem from="1662429194753" duration="2784000" />
       <workItem from="1662592903274" duration="9056000" />
       <workItem from="1663020324382" duration="8012000" />
-      <workItem from="1663178546723" duration="13330000" />
+      <workItem from="1663178546723" duration="13492000" />
+      <workItem from="1663617400226" duration="9760000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -171,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663037342632</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added SingleCircularLinkedList and DoubleCircularLinkedList">
+      <created>1663209451404</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663209451404</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +226,8 @@
     <MESSAGE value="added arrayList" />
     <MESSAGE value="added SingleLinkedList" />
     <MESSAGE value="added LinkedList" />
-    <option name="LAST_COMMIT_MESSAGE" value="added LinkedList" />
+    <MESSAGE value="added SingleCircularLinkedList and DoubleCircularLinkedList" />
+    <option name="LAST_COMMIT_MESSAGE" value="added SingleCircularLinkedList and DoubleCircularLinkedList" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -206,18 +239,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ca/bytetube/_03_list/Main.java</url>
-          <line>88</line>
+          <line>111</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ca/bytetube/_03_list/Main.java</url>
-          <line>74</line>
+          <line>97</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ca/bytetube/_03_list/Main.java</url>
-          <line>60</line>
+          <line>83</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/SortColors.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/DivideList.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

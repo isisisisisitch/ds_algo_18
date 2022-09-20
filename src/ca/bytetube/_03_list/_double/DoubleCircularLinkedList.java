@@ -8,6 +8,7 @@ public class DoubleCircularLinkedList<E> extends AbstractList<E> {
 
     private Node<E> last;//null
 
+    private Node<E> current;
 
     private static class Node<E> {
         E value;
@@ -101,26 +102,31 @@ public class DoubleCircularLinkedList<E> extends AbstractList<E> {
         return oldVal;
     }
 
-    @Override
-    public E remove(int index) {
-        rangeCheck(index);
-        Node<E> node = node(index);
+    public E remove(Node<E> current) {
         if (size == 1) {
             first = null;
             last = null;
         } else {//current/tail/head
-            Node<E> prevNode = node.prev;
-            Node<E> nextNode = node.next;
+            Node<E> prevNode = current.prev;
+            Node<E> nextNode = current.next;
             prevNode.next = nextNode;
             nextNode.prev = prevNode;
 
-            if (index == 0) first = nextNode;
-            if (index == size - 1) last = prevNode;
+            if (current == first) first = nextNode;
+            if (current == last) last = prevNode;
 
         }
 
         size--;
-        return node.value;
+        return current.value;
+    }
+
+    @Override
+    public E remove(int index) {
+        rangeCheck(index);
+        Node<E> node = node(index);
+        return remove(node);
+
     }
 
     @Override
@@ -162,5 +168,30 @@ public class DoubleCircularLinkedList<E> extends AbstractList<E> {
         sb.append("}");
         return sb.toString();
     }
+
+
+    public void reset() {
+        current = first;
+    }
+
+
+    public E next() {
+        if (current == null) return null;
+        current = current.next;
+        return current.value;
+    }
+
+
+
+    public E remove() {//删除current指向的节点
+        if (current == null) return null;
+        Node<E> next = current.next;
+        E val = remove(current);
+        if (size == 0) current = null;
+        else current = next;
+
+        return val;
+    }
+
 
 }

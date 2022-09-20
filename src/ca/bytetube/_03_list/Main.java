@@ -6,7 +6,8 @@ import ca.bytetube._03_list._single.SingleCircularLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        test4();
+        test5();
+//        test4();
 //          test3();
 //        test2();
 //        test1();
@@ -36,6 +37,28 @@ public class Main {
         //list.remove(0);
         // System.out.println(list.indexOf(333));
 
+    }
+
+    public static void test5(){
+        DoubleCircularLinkedList<Integer> list = new DoubleCircularLinkedList<>();
+        for (int i = 1; i <= 8 ; i++) {
+            list.add(i);
+        }
+
+        //reset
+        list.reset();
+
+        while (list.size > 1){
+            next(list,2);
+            System.out.println(list.remove());
+        }
+
+    }
+
+    public static void next( DoubleCircularLinkedList<Integer> list,int count){
+        for (int i = 0; i < count; i++) {
+            list.next();
+        }
     }
 
     public static void test4() {
