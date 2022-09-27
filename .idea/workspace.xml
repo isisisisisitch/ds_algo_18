@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/PalindromeLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/RemoveLinkedListElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/FindAimInSortedMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/MatrixPrint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/MergeSortedArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/SpiralMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/GetFirstInsertionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/GetFirstInsertionNode.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,13 +64,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GetFirstInsertionNode">
+  <component name="RunManager" selected="Application.FindAimInSortedMatrix">
     <configuration name="DivideList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._01_list.DivideList" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ca.bytetube._00_leetcode._01_list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FindAimInSortedMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.FindAimInSortedMatrix" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,25 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._02_dynamicArray.Main" />
+    <configuration name="MatrixPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.MatrixPrint" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._02_dynamicArray.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._03_list.Main" />
-      <module name="ds_algo_18" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.bytetube._03_list.*" />
+          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FindAimInSortedMatrix" />
+        <item itemvalue="Application.MatrixPrint" />
         <item itemvalue="Application.GetFirstInsertionNode" />
         <item itemvalue="Application.DivideList" />
         <item itemvalue="Application.SortColors" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +160,9 @@
       <workItem from="1663020324382" duration="8012000" />
       <workItem from="1663178546723" duration="13492000" />
       <workItem from="1663617400226" duration="9804000" />
-      <workItem from="1663792845530" duration="9041000" />
+      <workItem from="1663792845530" duration="9202000" />
+      <workItem from="1664204429644" duration="614000" />
+      <workItem from="1664234715459" duration="8108000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -196,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663641794649</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added list questions_2">
+      <created>1663813555114</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663813555114</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +231,8 @@
     <MESSAGE value="added LinkedList" />
     <MESSAGE value="added SingleCircularLinkedList and DoubleCircularLinkedList" />
     <MESSAGE value="added list questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added list questions" />
+    <MESSAGE value="added list questions_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="added list questions_2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
