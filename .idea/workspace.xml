@@ -2,10 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/FindAimInSortedMatrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/MatrixPrint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/MergeSortedArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/SpiralMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/MyStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/ValidParentheses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_03_queue/MyQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/AbstractList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/List.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_double/DoubleCircularLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_double/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_single/ArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_single/SingleCircularLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_single/SingleLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/Dequeue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/Queue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/AbstractList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/List.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_double/DoubleCircularLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_double/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_single/ArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_single/SingleCircularLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_single/SingleLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,6 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ca/bytetube/_05_queue" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -50,6 +73,10 @@
       <recent name="ca.bytetube._03_list._double" />
       <recent name="ca.bytetube._03_list._single" />
       <recent name="ca.bytetube._03_list" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ca/bytetube/_05_queue" />
+      <recent name="$PROJECT_DIR$/src/ca/bytetube/_04_stack" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,20 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FindAimInSortedMatrix">
-    <configuration name="DivideList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._01_list.DivideList" />
-      <module name="ds_algo_18" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.bytetube._00_leetcode._01_list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="FindAimInSortedMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.FindAimInSortedMatrix" />
       <module name="ds_algo_18" />
@@ -91,12 +105,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetFirstInsertionNode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._01_list.GetFirstInsertionNode" />
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._05_queue.Main" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._00_leetcode._01_list.*" />
+          <option name="PATTERN" value="ca.bytetube._05_queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._04_stack.Main" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._04_stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,12 +144,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortColors" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.SortColors" />
+    <configuration name="MyStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._02_stack.MyStack" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
+          <option name="PATTERN" value="ca.bytetube._00_leetcode._02_stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.MyStack" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.FindAimInSortedMatrix" />
         <item itemvalue="Application.MatrixPrint" />
-        <item itemvalue="Application.GetFirstInsertionNode" />
-        <item itemvalue="Application.DivideList" />
-        <item itemvalue="Application.SortColors" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +189,9 @@
       <workItem from="1663617400226" duration="9804000" />
       <workItem from="1663792845530" duration="9202000" />
       <workItem from="1664204429644" duration="614000" />
-      <workItem from="1664234715459" duration="8108000" />
+      <workItem from="1664234715459" duration="8221000" />
+      <workItem from="1664816772603" duration="1229000" />
+      <workItem from="1664839014558" duration="8973000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -206,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663813555114</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added array questions">
+      <created>1664245418023</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664245418023</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +268,8 @@
     <MESSAGE value="added SingleCircularLinkedList and DoubleCircularLinkedList" />
     <MESSAGE value="added list questions" />
     <MESSAGE value="added list questions_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="added list questions_2" />
+    <MESSAGE value="added array questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added array questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
