@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/MyStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/ValidParentheses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_03_queue/MyQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/AbstractList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_double/DoubleCircularLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_double/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_single/ArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_single/SingleCircularLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_04_stack/list/_single/SingleLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/Dequeue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/AbstractList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_double/DoubleCircularLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_double/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_single/ArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_single/SingleCircularLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_05_queue/list/_single/SingleLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/MaximumSubarray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/MinStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/SlidingWindowMaximum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -191,7 +168,8 @@
       <workItem from="1664204429644" duration="614000" />
       <workItem from="1664234715459" duration="8221000" />
       <workItem from="1664816772603" duration="1229000" />
-      <workItem from="1664839014558" duration="8973000" />
+      <workItem from="1664839014558" duration="9017000" />
+      <workItem from="1665003080821" duration="7052000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -242,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664245418023</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added stack and queue">
+      <created>1664850660699</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664850660699</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +254,8 @@
     <MESSAGE value="added list questions" />
     <MESSAGE value="added list questions_2" />
     <MESSAGE value="added array questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added array questions" />
+    <MESSAGE value="added stack and queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="added stack and queue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
