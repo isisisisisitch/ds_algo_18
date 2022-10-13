@@ -2,9 +2,9 @@ package ca.bytetube._00_leetcode._04_tree;
 
 
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    int val;//4 bytes
+    TreeNode left;//8 bytes
+    TreeNode right;////8 bytes
 
     TreeNode() {}
 

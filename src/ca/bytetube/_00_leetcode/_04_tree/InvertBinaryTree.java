@@ -40,18 +40,36 @@ public class InvertBinaryTree {
     }
 
 
-    public TreeNode invertTree(TreeNode root) {
+    public TreeNode invertTree3(TreeNode root) {
         if (root == null) return null;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode poll = queue.poll();
-            TreeNode temp = root.left;
-            root.left = root.right;
-            root.right = temp;
+            TreeNode temp = poll.left;
+            poll.left = poll.right;
+            poll.right = temp;
             if (poll.left != null) queue.offer(poll.left);
             if (poll.right != null) queue.offer(poll.right);
         }
+
+
+        return root;
+    }
+
+    public TreeNode invertTree(TreeNode root) {
+
+        if (root == null) return null;
+
+
+        invertTree(root.left);
+
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        invertTree(root.left);
+
 
 
         return root;

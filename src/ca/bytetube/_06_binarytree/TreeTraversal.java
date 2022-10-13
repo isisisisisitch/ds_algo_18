@@ -7,22 +7,88 @@ import java.util.Stack;
 public class TreeTraversal {
 
     public static void main(String[] args) {
-        Node root = new Node(7, null, null);
-        root.left = new Node(4, null, null);
-        root.right = new Node(9, null, null);
-        root.left.left = new Node(2, null, null);
+        Node root = new Node(1, null, null);
+        root.left = new Node(2, null, null);
+        root.right = new Node(3, null, null);
+        root.left.left = new Node(4, null, null);
         root.left.right = new Node(5, null, null);
-        root.right.left = new Node(8, null, null);
-        root.right.right = new Node(11, null, null);
+        root.right.left = new Node(6, null, null);
+        root.right.right = new Node(7, null, null);
+        root.right.right.left = new Node(10, null, null);
+        root.right.right.right = new Node(11, null, null);
+        root.left.left.left = new Node(8, null, null);
+        root.left.left.right = new Node(9, null, null);
 //        preOrderTraversalByRecursion(root);
 //        System.out.println();
 //        preOrderTraversal(root);
 //        postOrderTraversalByRecursion(root);
 //        System.out.println();
 //        postOrderTraversal(root);
-        levelOrderTraversal(root);
+//        levelOrderTraversal(root);
+
+        System.out.println(isCompleteTree(root));
 
     }
+
+    public static boolean isCompleteTree(Node root) {
+
+        if (root == null) return false;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean isLeaf = false;
+        while (!queue.isEmpty()) {
+            Node node = queue.poll();
+
+            if (isLeaf && !(node.left == null && node.right == null)) return false;
+            //1. If node.left!=null && node.right!=null,
+            // add node.left and node.left to the queue in sequence
+            if (node.left != null && node.right != null) {
+                queue.offer(node.left);
+                queue.offer(node.right);
+            }
+            //2. If node.left==null && node.right!=null，return false
+            else if (node.left == null && node.right != null) return false;
+
+                //3.If node.left!=null && node.right==null
+            else if (node.left != null && node.right == null) {
+                queue.offer(node.left);
+                isLeaf = true;
+            }
+            //4. node.left==null && node.right==null
+            else isLeaf = true;
+
+
+        }
+
+        return true;
+    }
+
+
+    private static int height(Node node) {
+
+        if (node == null) return 0;
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+        int height = 0;
+        int levelSize = 1;
+        while (!queue.isEmpty()) {
+            Node poll = queue.poll();
+            levelSize--;
+            if (poll.left != null) queue.offer(poll.left);
+            if (poll.right != null) queue.offer(poll.right);
+
+            if (levelSize == 0) {//意味着当前层遍历完，即将遍历下一层
+                levelSize = queue.size();
+                height++;
+
+            }
+        }
+
+        return height;
+    }
+
+
 
     private static class Node {
         public int val;

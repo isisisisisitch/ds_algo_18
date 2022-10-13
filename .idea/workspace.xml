@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/InvertBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/TreeTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/CheckCompletenessOfBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/HeightComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/InvertBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/InvertBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/TreeTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/TreeTraversal.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,13 +75,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TreeTraversal">
-    <configuration name="FindAimInSortedMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.FindAimInSortedMatrix" />
+  <component name="RunManager" selected="Application.Main (2)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._05_queue.Main" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
+          <option name="PATTERN" value="ca.bytetube._05_queue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,12 +89,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._05_queue.Main" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._06_binarytree.Main" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._05_queue.*" />
+          <option name="PATTERN" value="ca.bytetube._06_binarytree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.TreeTraversal" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.MyStack" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.FindAimInSortedMatrix" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +177,7 @@
       <workItem from="1664816772603" duration="1229000" />
       <workItem from="1664839014558" duration="9017000" />
       <workItem from="1665003080821" duration="7303000" />
-      <workItem from="1665444527762" duration="6504000" />
+      <workItem from="1665444527762" duration="16903000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -236,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665023568875</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added tree traversal">
+      <created>1665456181524</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665456181524</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +278,8 @@
     <MESSAGE value="added array questions" />
     <MESSAGE value="added stack and queue" />
     <MESSAGE value="added stack and queue questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stack and queue questions" />
+    <MESSAGE value="added tree traversal" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tree traversal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -299,6 +313,16 @@
           <url>file://$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_01_list/DivideList.java</url>
           <line>12</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
