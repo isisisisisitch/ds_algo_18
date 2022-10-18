@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/CheckCompletenessOfBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinarySearchTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/HeightComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/file/Files.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/printer/BinaryTreeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/printer/BinaryTrees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/printer/InorderPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/printer/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/printer/Strings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/InvertBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/InvertBinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/TreeTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/TreeTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/TreeTraversal.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ca/bytetube/_05_queue" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,6 +60,7 @@
       <recent name="ca.bytetube._03_list" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ca/bytetube/_06_binarytree" />
       <recent name="$PROJECT_DIR$/src/ca/bytetube/_05_queue" />
       <recent name="$PROJECT_DIR$/src/ca/bytetube/_04_stack" />
     </key>
@@ -177,7 +179,8 @@
       <workItem from="1664816772603" duration="1229000" />
       <workItem from="1664839014558" duration="9017000" />
       <workItem from="1665003080821" duration="7303000" />
-      <workItem from="1665444527762" duration="16903000" />
+      <workItem from="1665444527762" duration="17141000" />
+      <workItem from="1666034589826" duration="10402000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -249,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665456181524</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added tree question and bst">
+      <created>1665629486123</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665629486123</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +289,8 @@
     <MESSAGE value="added stack and queue" />
     <MESSAGE value="added stack and queue questions" />
     <MESSAGE value="added tree traversal" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tree traversal" />
+    <MESSAGE value="added tree question and bst" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tree question and bst" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -316,12 +327,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ca/bytetube/_06_binarytree/Main.java</url>
-          <line>24</line>
+          <line>100</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
