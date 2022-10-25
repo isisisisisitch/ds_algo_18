@@ -11,11 +11,30 @@ public class Main {
 
     public static void test5() {
         AVLTree<Integer> tree = new AVLTree<>();
-        int[] arr = {1,2,3,4,5,6,7,8,9};
-        for (int i = 0; i < arr.length; i++) {
-            tree.add(arr[i]);
-        }
+
+        tree.add(11);
+        tree.add(6);
+        tree.add(15);
+        tree.add(4);
+        tree.add(8);
+        tree.add(16);
+        tree.add(9);
+
+
         BinaryTrees.println(tree);
+
+        System.out.println("=====================================================");
+        tree.remove(16);
+        BinaryTrees.println(tree);
+//        tree.remove(16);
+//        System.out.println("=====================================================");
+//        BinaryTrees.println(tree);
+//        tree.remove(8);
+//        System.out.println("=====================================================");
+//        BinaryTrees.println(tree);
+//        tree.remove(10);
+//        System.out.println("=====================================================");
+//        BinaryTrees.println(tree);
     }
 
 }

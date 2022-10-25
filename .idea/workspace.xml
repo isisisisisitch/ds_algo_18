@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_04_tree/IsBalancedTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/AVLTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/BinarySearchTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/BinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/file/Files.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/printer/BinaryTreeInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/printer/BinaryTrees.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/printer/InorderPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/printer/LevelOrderPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/printer/Printer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/printer/Strings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_07_avlTree/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +178,8 @@
       <workItem from="1665003080821" duration="7303000" />
       <workItem from="1665444527762" duration="17141000" />
       <workItem from="1666034589826" duration="10462000" />
-      <workItem from="1666222542204" duration="7924000" />
+      <workItem from="1666222542204" duration="8459000" />
+      <workItem from="1666635270210" duration="9900000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -272,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666060526199</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added avl tree">
+      <created>1666234036354</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666234036354</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +304,8 @@
     <MESSAGE value="added tree traversal" />
     <MESSAGE value="added tree question and bst" />
     <MESSAGE value="completed bst" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed bst" />
+    <MESSAGE value="added avl tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="added avl tree" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

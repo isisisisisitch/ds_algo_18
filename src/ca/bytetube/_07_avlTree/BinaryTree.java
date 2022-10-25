@@ -258,19 +258,6 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         return true;
     }
 
-//    public boolean isBalanced() {
-//
-//        return isBalanced(root);
-//    }
-//
-//
-//    public boolean isBalanced(Node<E> head) {
-//
-//        return false;
-//    }
-
-
-
     @Override
     public Object root() {
         return root;
@@ -320,11 +307,11 @@ public class BinaryTree<E> implements BinaryTreeInfo {
 
 
         protected boolean isLeftChild() {
-            return this == this.parent.left;
+            return parent != null && this == this.parent.left;//null.left ---> NullPointerException
         }
 
         protected boolean isRightChild() {
-            return this == this.parent.right;
+            return  parent != null && this == this.parent.right;
         }
 
         @Override

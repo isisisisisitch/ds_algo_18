@@ -13,11 +13,12 @@ public class BinarySearchTree<E> extends BinaryTree<E> {
         this.comparator = comparator;
     }
 
-    public void afterAdd(Node<E> node) {
-    }
 
     public Node<E> createNode(E element, Node<E> parent) {
         return new Node<>(element, parent);
+    }
+
+    public void afterAdd(Node<E> node) {
     }
 
     // add elements
@@ -66,6 +67,9 @@ public class BinarySearchTree<E> extends BinaryTree<E> {
     }
 
 
+    public void afterRemove(Node<E> node) {
+    }
+
     private void remove(Node<E> node) {
         size--;
         //1.Delete node-node with degree 2
@@ -82,14 +86,20 @@ public class BinarySearchTree<E> extends BinaryTree<E> {
             if (node.parent == null) root = replacement;
             if (node == node.parent.left) node.parent.left = replacement;
             else node.parent.right = replacement;
+
+            afterRemove(node);
         }
 
-        //3.Delete node-leaf node
-        else if (node.parent == null) root = null;
 
-        else {
+        //3.Delete node-leaf node
+        else if (node.parent == null) {
+            root = null;
+            afterRemove(node);
+        } else {
             if (node == node.parent.left) node.parent.left = null;
             else node.parent.right = null;
+
+            afterRemove(node);
         }
 
     }
