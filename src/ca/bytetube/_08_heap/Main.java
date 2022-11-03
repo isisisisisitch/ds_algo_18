@@ -24,11 +24,13 @@ public class Main {
 //        System.out.println("=======================================");
 //        BinaryTrees.println(heap);
 //        System.out.println(heap.size());
-        test();
+//        test();
+        Integer[] arr = {5, 99, 3, 4, 7, 0, 1, 55, 42, 89};
+        topK(arr,3);
     }
 
-    public static void test(){
-        Integer[] arr = {5,9,3,4,7,0,1,55,42,89};
+    public static void test() {
+        Integer[] arr = {5, 9, 3, 4, 7, 0, 1, 55, 42, 89};
         BinaryHeap<Integer> heap = new BinaryHeap<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -36,5 +38,26 @@ public class Main {
             }
         }, arr);
         BinaryTrees.println(heap);
+    }
+
+    public static void topK(Integer[] data, int k) {
+
+        BinaryHeap<Integer> heap = new BinaryHeap<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2;
+            }
+        });
+
+        for (int i = 0; i < data.length; i++) {
+            if (heap.size < k) {
+                heap.add(data[i]);
+            } else if (data[i] < heap.get()) {
+                heap.replace(data[i]);
+            }
+        }
+
+        BinaryTrees.println(heap);
+
     }
 }
