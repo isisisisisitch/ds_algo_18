@@ -42,16 +42,15 @@ public class Person {
     }
 
 
-
     /**
-     *重写equals的目的：当发生hash冲突时，用来比较2个keys是否相同
+     * 重写equals的目的：当发生hash冲突时，用来比较2个keys是否相同
      * 假设有一个index的位置上连接了多个node（bucket）
      * 这时我们新插入一个数据，让它生成自己的hash code，生成的code通过%运算得到bucket array所对应的index
      * 假设新插入数据的key所对应的index和之前的数据的key所对应的index相同，
      * 那么，既然index是相同的，我们则需要拿到这个key和list上的多个node（bukcet）所对应的key进行比较，
      * 如果是同一个key，则发生覆盖
      * 如果不同，则在list上追加
-     *
+     * <p>
      * 在jdk的HashMap中，为什么不直接用hash code来进行比较进而确定他们是不是同一个对象呢？
      * 不能！
      * 原因：
@@ -78,25 +77,41 @@ public class Person {
 
 
     public static void main(String[] args) {
-        Person p1 = new Person(54, 17.7f, "jeff");
-        Person p2 = new Person(45, 18.2f, "pony");
-        Person p3 = new Person(54, 17.7f, "jeff");
-
-//        System.out.println(p1 == p3);
-        System.out.println(p1.hashCode());//1639705018 address  -262661225
-        System.out.println(p2.hashCode());//1627674070          -254354787
-        System.out.println(p3.hashCode());//1360875712          -262661225
-
-        HashMap<Person, Integer> map = new HashMap<>();
-        map.put(p1, 999);
-        map.put(p2, 222);
-        map.put(p3, 555);
-        System.out.println(map.size());// 2/3
-       // System.out.println(p1 == p3);//false
+//        Person p1 = new Person(54, 17.7f, "jeff");
+//        Person p2 = new Person(45, 18.2f, "pony");
+//        Person p3 = new Person(54, 17.7f, "jeff");
+//
+////        System.out.println(p1 == p3);
+//        System.out.println(p1.hashCode());//1639705018 address  -262661225
+//        System.out.println(p2.hashCode());//1627674070          -254354787
+//        System.out.println(p3.hashCode());//1360875712          -262661225
+//
+//        HashMap<Person, Integer> map = new HashMap<>();
+//        map.put(p1, 999);
+//        map.put(p2, 222);
+//        map.put(p3, 555);
+//        System.out.println(map.size());// 2/3
+        // System.out.println(p1 == p3);//false
 
         //如果只写了hashCode() 那么map.size() = 3
         //如果只写了equals(Object o)  那么map.size() = 2/3
         //如果写了hashCode()，equals(Object o)  那么map.size() = 2
+        test();//
+
+
+    }
+
+    public static void test() {
+        Person p1 = new Person(54, 17.7f, "jeff");
+
+        Person p3 = new Person(54, 17.7f, "jeff");
+
+        HashMap<Object, Integer> map = new HashMap<>();
+        map.put(p1, 111);
+        map.put("test", 222);
+        map.put(p3, 333);
+        System.out.println(map.size());
+
 
     }
 }
