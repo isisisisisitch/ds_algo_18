@@ -18,5 +18,7 @@ public interface Graph<V, E> {
 
     public void removeEdge(V from, V to);
 
+    public void bfs(V begin);
 
+    public void dfs(V begin);
 }
