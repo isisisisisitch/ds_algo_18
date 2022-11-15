@@ -1,12 +1,36 @@
 package ca.bytetube._10_graph;
 
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 //      test2();
 //      testBFS_02();
-        testDFS_01();
-       // testDFS_02();
+//        testDFS_01();
+        // testDFS_02();
+       // testBFS_withVisitor();
+        testTopo();
+
+    }
+
+    public static void testTopo() {
+        Graph<Object, Double> directGraph = directGraph(Data.TOPO);
+        List<Object> res = ((ListGraph) directGraph).topologicalSort(3);
+        System.out.println(res);
+    }
+
+
+
+    public static void testBFS_withVisitor() {
+        Graph<Object, Double> directGraph = directGraph(Data.BFS_02);
+        directGraph.bfs(0, new Graph.VertexVisitor<Object>() {
+            @Override
+            public boolean visit(Object val) {
+                System.out.print(val + " ");
+                return val.equals(6);
+            }
+        });
     }
 
     public static void testDFS_02() {

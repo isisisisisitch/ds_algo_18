@@ -1,7 +1,10 @@
 package ca.bytetube._10_graph;
 
-public interface Graph<V, E> {
 
+
+import java.util.Set;
+
+public interface Graph<V, E> {
 
 
     public int verticesSize();
@@ -21,4 +24,15 @@ public interface Graph<V, E> {
     public void bfs(V begin);
 
     public void dfs(V begin);
+
+    public void bfs(V begin, VertexVisitor<V> visitor);
+
+    public void dfs(V begin, VertexVisitor<V> visitor);
+
+    public Set<ListGraph.Edge<V, E>> mst();
+
+    public static abstract class VertexVisitor<V> {
+
+        public abstract boolean visit(V val);
+    }
 }

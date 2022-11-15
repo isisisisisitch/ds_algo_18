@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_10_graph/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_00_array/PrintChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_10_graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_10_graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_10_graph/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_10_graph/ListGraph.java" afterDir="false" />
@@ -89,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="Application.PrintChessBoard">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._09_hash.Main" />
       <module name="ds_algo_18" />
@@ -129,19 +129,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._07_avlTree.Main" />
-      <module name="ds_algo_18" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.bytetube._07_avlTree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Person" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._09_hash.Person" />
       <module name="ds_algo_18" />
@@ -155,13 +142,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PrintChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.PrintChessBoard" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PrintChessBoard" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Person" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +198,8 @@
       <workItem from="1667345383003" duration="9365000" />
       <workItem from="1667431691760" duration="7628000" />
       <workItem from="1667860161260" duration="9194000" />
-      <workItem from="1668032154135" duration="9450000" />
+      <workItem from="1668032154135" duration="10404000" />
+      <workItem from="1668471878501" duration="7952000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -319,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667877632571</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added graph traversal:bfs and dfs">
+      <created>1668050421605</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1668050421605</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +364,8 @@
     <MESSAGE value="completed binary heap" />
     <MESSAGE value="completed hash" />
     <MESSAGE value="added graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="added graph" />
+    <MESSAGE value="added graph traversal:bfs and dfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added graph traversal:bfs and dfs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
