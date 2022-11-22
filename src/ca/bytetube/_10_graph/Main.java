@@ -2,24 +2,32 @@ package ca.bytetube._10_graph;
 
 
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
 //      test2();
 //      testBFS_02();
-//        testDFS_01();
-        // testDFS_02();
-       // testBFS_withVisitor();
-        testTopo();
-
+//      testDFS_01();
+//      testDFS_02();
+//      testBFS_withVisitor();
+//      testTopo();
+        testMST();
     }
+
+
+    public static void testMST() {
+        Graph<Object, Double> graph = unDirectGraph(Data.MST_02);
+        Set<Graph.EdgeInfo<Object, Double>> mst = graph.mst();
+        System.out.println(mst);
+    }
+
 
     public static void testTopo() {
         Graph<Object, Double> directGraph = directGraph(Data.TOPO);
         List<Object> res = ((ListGraph) directGraph).topologicalSort(3);
         System.out.println(res);
     }
-
 
 
     public static void testBFS_withVisitor() {
@@ -100,9 +108,26 @@ public class Main {
 
     }
 
+    static Graph.WeightManager<Double> weightManager = new Graph.WeightManager<Double>(){
+        @Override
+        public int compare(Double w1, Double w2) {
+            return w1.compareTo(w2);
+        }
+
+        @Override
+        public Double add(Double w1, Double w2) {
+            return w1 + w2;
+        }
+
+        @Override
+        public Double zero() {
+            return 0.0;
+        }
+    };
+
 
     public static Graph<Object, Double> unDirectGraph(Object[][] data) {
-        Graph<Object, Double> graph = new ListGraph<>();
+        Graph<Object, Double> graph = new ListGraph<>(weightManager);
         for (Object[] edge : data) {
             if (edge.length == 1) {
                 graph.addVertex(edge[0]);

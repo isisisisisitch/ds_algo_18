@@ -2,12 +2,25 @@ package ca.bytetube._10_graph;
 
 import java.util.*;
 
-public class ListGraph<V, E> implements Graph<V, E> {
+public class ListGraph<V, E> extends Graph<V, E> {
     private Map<V, Vertex<V, E>> vertices = new HashMap<>();
 
     private Set<Edge<V, E>> edges = new HashSet<>();
 
+
+    private Comparator<Edge<V, E>> edgeComparator = new Comparator<Edge<V, E>>() {
+        @Override
+        public int compare(Edge<V, E> o1, Edge<V, E> o2) {
+            return weightManager.compare(o1.weight, o2.weight);
+        }
+    };
+
+
     public ListGraph() {
+    }
+
+    public ListGraph(WeightManager<E> weightManager) {
+        super(weightManager);
     }
 
     private static class Vertex<V, E> {
@@ -66,6 +79,12 @@ public class ListGraph<V, E> implements Graph<V, E> {
         public int hashCode() {
             return from.hashCode() * 31 + to.hashCode();
         }
+
+
+        public EdgeInfo<V, E> info() {
+            return new EdgeInfo(weight, from.value, to.value);
+        }
+
 
         @Override
         public String toString() {
@@ -294,19 +313,74 @@ public class ListGraph<V, E> implements Graph<V, E> {
         }
     }
 
-    @Override
-    public Set<Edge<V, E>> mst() {
 
+    @Override
+    public Set<EdgeInfo<V, E>> mst() {
         return prim();
     }
 
-    private Set<Edge<V, E>> prim(){
 
-        return null;
+    private Set<EdgeInfo<V, E>> prim() {
+        //边集合 set A
+        Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();
+        //点集合 Set S
+        Set<Vertex<V, E>> addedVertices = new HashSet<>();
+
+        Iterator<Vertex<V, E>> iterator = vertices.values().iterator();
+        Vertex<V, E> vertex = iterator.next();//A
+        addedVertices.add(vertex);
+//        //nlogn
+//        PriorityQueue<Edge<V,E>> minHeap = new PriorityQueue<>(edgeComparator);
+//        for (Edge<V,E> edge : vertex.outDegrees) {
+//            minHeap.offer(edge);
+//        }
+
+        //O(n)
+        MinHeap<Edge<V, E>> minHeap = new MinHeap<>(vertex.outDegrees, edgeComparator);
+
+        while (!minHeap.isEmpty() && addedVertices.size() < vertices.size()) {
+            //从堆顶拿到weight最小的边
+            Edge<V, E> edge = minHeap.remove();
+            if (addedVertices.contains(edge.to)) continue;
+            //AB --- set A
+            edgeInfos.add(edge.info());
+            //B --- Set S
+            addedVertices.add(edge.to);
+            //将B点的所有outDegrees放入到heap中，继续寻找AB集合中的最小横切边
+            minHeap.addAll(edge.to.outDegrees);
+
+        }
+
+        return edgeInfos;
     }
 
-    private Set<Edge<V, E>> kruskal(){
-        return null;
+    private Set<EdgeInfo<V, E>> kruskal() {
+        int edgeSize = vertices.size() - 1;
+        if (edgeSize == -1) return null;
+
+        Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();
+        MinHeap<Edge<V, E>> minHeap = new MinHeap<>(edges, edgeComparator);
+        UnionFind<Vertex<V, E>> uf = new UnionFind<>();
+        vertices.forEach((V v, Vertex<V, E> vertex) -> {
+            uf.makeSet(vertex);
+        });
+
+        while (!minHeap.isEmpty() && edgeInfos.size() < vertices.size() - 1) {
+            Edge<V, E> edge = minHeap.remove();
+            if (uf.isSame(edge.to, edge.from)) continue;
+            edgeInfos.add(edge.info());
+            uf.union(edge.from, edge.to);
+        }
+//        Edge<V, E> edge = minHeap.remove();
+//        edgeInfos.add(edge.info());
+//        Edge<V, E> edge2 = minHeap.remove();
+//        edgeInfos.add(edge2.info());
+//        Edge<V, E> edge3 = minHeap.remove();
+//        while (如果不成环) {
+//            edgeInfos.add(edge3.info());
+//        }
+
+        return edgeInfos;
     }
 
 
