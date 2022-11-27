@@ -1,7 +1,6 @@
 package ca.bytetube._10_graph;
-
-
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Main {
@@ -12,9 +11,16 @@ public class Main {
 //      testDFS_02();
 //      testBFS_withVisitor();
 //      testTopo();
-        testMST();
+//      testMST();
+        testSP();
     }
 
+
+    public static void testSP() {
+        Graph<Object, Double> graph = directGraph(Data.SP);
+        Map<Object, Double> paths = graph.shortestPathWithoutPathInfo("A");
+        System.out.println(paths);
+    }
 
     public static void testMST() {
         Graph<Object, Double> graph = unDirectGraph(Data.MST_02);
@@ -92,7 +98,7 @@ public class Main {
 
 
     public static Graph<Object, Double> directGraph(Object[][] data) {
-        Graph<Object, Double> graph = new ListGraph<>();
+        Graph<Object, Double> graph = new ListGraph<>(weightManager);
         for (Object[] edge : data) {
             if (edge.length == 1) {
                 graph.addVertex(edge[0]);

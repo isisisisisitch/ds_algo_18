@@ -320,6 +320,151 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
 
+    @Override
+    public Map<V, E> shortestPathWithoutPathInfo(V begin) {
+        Vertex<V, E> beginVertex = vertices.get(begin);
+        if (beginVertex == null) return null;
+        /**
+         * Map<V,E> paths = new HashMap<>();
+         * paths.put("B",10);
+         * paths.put("D",30);
+         * paths.put("E",100);
+         *
+         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
+         *由于B点还在map中，下次选最短路径时，可能会被重复选择
+         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
+         * Map<V,E> selectedPaths = new HashMap<>();
+         * selectedPaths.put("B",10);
+         * paths.remove("B");
+         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+         */
+        Map<Vertex<V, E>, E> paths = new HashMap<>();
+
+        Map<V, E> selectedPaths = new HashMap<>();
+
+        //初始化paths：将A到B,D,E的最短路径信息放入map中
+        for (Edge<V, E> edge : beginVertex.outDegrees) {
+            paths.put(edge.to, edge.weight);
+        }
+        while (!paths.isEmpty()){
+            Map.Entry<Vertex<V, E>, E> minEntry = getMinPath(paths);//("B",10);
+            Vertex<V, E> minVertex = minEntry.getKey();
+            E minWeight = minEntry.getValue();
+            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
+            paths.remove(minVertex);
+            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+            for (Edge<V, E> edge : minVertex.outDegrees) {
+
+            /*Relaxation
+            分别需要得到更新后的weight和之前的weight，然后大小比较
+            //如果newWeight < oldWeight ,则更新paths
+            //如果newWeight > oldWeight ,则不更新paths
+             */
+                //1.先算出newWeight
+                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
+                //2.算出oldWeight
+                E oldWeight = paths.get(edge.to);//null
+                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
+                    paths.put(edge.to,newWeight);
+                }
+
+            }
+
+        }
+
+        return selectedPaths;
+    }
+
+    @Override
+    public Map<V, PathInfo<V, E>> shortestPath(V begin) {
+        Vertex<V, E> beginVertex = vertices.get(begin);
+        if (beginVertex == null) return null;
+        /**
+         * Map<V,E> paths = new HashMap<>();
+         * paths.put("B",10);
+         * paths.put("D",30);
+         * paths.put("E",100);
+         *
+         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
+         *由于B点还在map中，下次选最短路径时，可能会被重复选择
+         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
+         * Map<V,E> selectedPaths = new HashMap<>();
+         * selectedPaths.put("B",10);
+         * paths.remove("B");
+         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+         */
+        Map<Vertex<V, E>, E> paths = new HashMap<>();
+
+        Map<V, E> selectedPaths = new HashMap<>();
+
+        //初始化paths：将A到B,D,E的最短路径信息放入map中
+        for (Edge<V, E> edge : beginVertex.outDegrees) {
+            paths.put(edge.to, edge.weight);
+        }
+        while (!paths.isEmpty()){
+            Map.Entry<Vertex<V, E>, E> minEntry = getMinPath(paths);//("B",10);
+            Vertex<V, E> minVertex = minEntry.getKey();
+            E minWeight = minEntry.getValue();
+            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
+            paths.remove(minVertex);
+            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+            for (Edge<V, E> edge : minVertex.outDegrees) {
+
+            /*Relaxation
+            分别需要得到更新后的weight和之前的weight，然后大小比较
+            //如果newWeight < oldWeight ,则更新paths
+            //如果newWeight > oldWeight ,则不更新paths
+             */
+                //1.先算出newWeight
+                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
+                //2.算出oldWeight
+                E oldWeight = paths.get(edge.to);//null
+                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
+                    paths.put(edge.to,newWeight);
+                }
+
+            }
+
+        }
+
+        return null;
+    }
+
+    private Map.Entry<Vertex<V, E>, E> getMinPath(Map<Vertex<V, E>, E> paths) {
+//        Vertex<V, E> minVertex = null;
+//        E minWeight = null;
+//        paths.forEach((Vertex<V,E> vertex ,E weight)->{
+//            if (weightManager.compare(weight,minWeight)< 0) {
+//                minVertex = vertex;
+//                minWeight = weight;
+//            }
+//        });
+
+//        for (Map.Entry<Vertex<V, E>, E> entry : paths.entrySet()) {
+//            E weight = entry.getValue();
+//            if (minWeight == null) {
+//                minWeight = weight;
+//                minVertex = entry.getKey();
+//            }
+//           else if (weightManager.compare(weight,minWeight)< 0) {
+//                minVertex = entry.getKey();
+//                minWeight = weight;
+//            }
+//        }
+
+        Iterator<Map.Entry<Vertex<V, E>, E>> iterator = paths.entrySet().iterator();
+        Map.Entry<Vertex<V, E>, E> minEntry = iterator.next();
+        while (iterator.hasNext()) {
+            Map.Entry<Vertex<V, E>, E> nextEntry = iterator.next();
+            if (weightManager.compare(nextEntry.getValue(), minEntry.getValue()) < 0) {
+                minEntry = nextEntry;
+            }
+        }
+
+        return minEntry;
+    }
+
+
     private Set<EdgeInfo<V, E>> prim() {
         //边集合 set A
         Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();
