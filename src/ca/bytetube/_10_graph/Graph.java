@@ -76,8 +76,7 @@ public abstract class Graph<V, E> {
         public String toString() {
             return "PathInfo{" +
                     "weight=" + weight +
-                    ", edgeInfos=" + edgeInfos +
-                    '}';
+                    ", edgeInfos=" + edgeInfos + '}';
         }
     }
 

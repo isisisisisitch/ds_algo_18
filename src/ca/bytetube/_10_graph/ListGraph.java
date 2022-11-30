@@ -314,156 +314,69 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
 
+    public void dfs1(V begin) {
+        Vertex<V, E> beginVertex = vertices.get(begin);
+        if (beginVertex == null) return;
+        Set<Vertex<V, E>> visitedVertices = new HashSet<>();
+        dfs1(beginVertex, visitedVertices);
+    }
+
+    public void dfs1(Vertex<V, E> beginVertex, Set<Vertex<V, E>> set) {
+        System.out.print(beginVertex.value + " ");
+        set.add(beginVertex);
+        for (Edge<V, E> edge : beginVertex.outDegrees) {
+            if (set.contains(edge.to)) continue;
+            dfs1(edge.to, set);
+        }
+
+
+    }
+
+    /**
+     * 准备一个queue，一个map（顶点，入度信息表），list
+     * 1.把indegree=0的顶点放到queue中，不为0的放到map里
+     * 2. 将queue顶头出队，放入list中，并且更新map表中的inDegree信息
+     * 3.观察map中更新后是否有新的inDegree=0的顶点，如果有，则放入queue中
+     * 4.不断重复2，3直到queue为空
+     */
+    public List<V> topologicalSort(V begin) {
+        Queue<Vertex<V, E>> queue = new LinkedList<>();
+        Map<Vertex<V, E>, Integer> map = new HashMap<>();
+        List<V> list = new LinkedList<>();
+//        Collection<Vertex<V, E>> values = vertices.values();
+//        for (Vertex<V, E> veVertex : values) {
+//            int in = veVertex.inDegrees.size();
+//            if (in == 0) queue.offer(veVertex);
+//            else map.put(veVertex,in);
+//        }
+
+        //1.把inDegree=0的顶点放到queue中，不为0的放到map里
+        vertices.forEach((V v, Vertex<V, E> vertex) -> {
+            int in = vertex.inDegrees.size();
+            if (in == 0) queue.offer(vertex);
+            else map.put(vertex, in);
+        });
+        while (!queue.isEmpty()) {
+            //2.将queue顶头出队，放入list中，并且更新map表中的inDegree信息
+            Vertex<V, E> vertex = queue.poll();
+            list.add(vertex.value);
+            for (Edge<V, E> edge : vertex.outDegrees) {
+                //3.观察map中更新后是否有新的inDegree=0的顶点，如果有，则放入queue中
+                int toIn = map.get(edge.to) - 1;
+                if (toIn == 0) queue.offer(edge.to);
+                map.put(edge.to, toIn);
+            }
+
+        }
+
+        return list;
+
+    }
+
     @Override
     public Set<EdgeInfo<V, E>> mst() {
         return prim();
     }
-
-
-    @Override
-    public Map<V, E> shortestPathWithoutPathInfo(V begin) {
-        Vertex<V, E> beginVertex = vertices.get(begin);
-        if (beginVertex == null) return null;
-        /**
-         * Map<V,E> paths = new HashMap<>();
-         * paths.put("B",10);
-         * paths.put("D",30);
-         * paths.put("E",100);
-         *
-         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
-         *由于B点还在map中，下次选最短路径时，可能会被重复选择
-         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
-         * Map<V,E> selectedPaths = new HashMap<>();
-         * selectedPaths.put("B",10);
-         * paths.remove("B");
-         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
-         */
-        Map<Vertex<V, E>, E> paths = new HashMap<>();
-
-        Map<V, E> selectedPaths = new HashMap<>();
-
-        //初始化paths：将A到B,D,E的最短路径信息放入map中
-        for (Edge<V, E> edge : beginVertex.outDegrees) {
-            paths.put(edge.to, edge.weight);
-        }
-        while (!paths.isEmpty()){
-            Map.Entry<Vertex<V, E>, E> minEntry = getMinPath(paths);//("B",10);
-            Vertex<V, E> minVertex = minEntry.getKey();
-            E minWeight = minEntry.getValue();
-            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
-            paths.remove(minVertex);
-            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
-            for (Edge<V, E> edge : minVertex.outDegrees) {
-
-            /*Relaxation
-            分别需要得到更新后的weight和之前的weight，然后大小比较
-            //如果newWeight < oldWeight ,则更新paths
-            //如果newWeight > oldWeight ,则不更新paths
-             */
-                //1.先算出newWeight
-                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
-                //2.算出oldWeight
-                E oldWeight = paths.get(edge.to);//null
-                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
-                    paths.put(edge.to,newWeight);
-                }
-
-            }
-
-        }
-
-        return selectedPaths;
-    }
-
-    @Override
-    public Map<V, PathInfo<V, E>> shortestPath(V begin) {
-        Vertex<V, E> beginVertex = vertices.get(begin);
-        if (beginVertex == null) return null;
-        /**
-         * Map<V,E> paths = new HashMap<>();
-         * paths.put("B",10);
-         * paths.put("D",30);
-         * paths.put("E",100);
-         *
-         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
-         *由于B点还在map中，下次选最短路径时，可能会被重复选择
-         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
-         * Map<V,E> selectedPaths = new HashMap<>();
-         * selectedPaths.put("B",10);
-         * paths.remove("B");
-         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
-         */
-        Map<Vertex<V, E>, E> paths = new HashMap<>();
-
-        Map<V, E> selectedPaths = new HashMap<>();
-
-        //初始化paths：将A到B,D,E的最短路径信息放入map中
-        for (Edge<V, E> edge : beginVertex.outDegrees) {
-            paths.put(edge.to, edge.weight);
-        }
-        while (!paths.isEmpty()){
-            Map.Entry<Vertex<V, E>, E> minEntry = getMinPath(paths);//("B",10);
-            Vertex<V, E> minVertex = minEntry.getKey();
-            E minWeight = minEntry.getValue();
-            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
-            paths.remove(minVertex);
-            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
-            for (Edge<V, E> edge : minVertex.outDegrees) {
-
-            /*Relaxation
-            分别需要得到更新后的weight和之前的weight，然后大小比较
-            //如果newWeight < oldWeight ,则更新paths
-            //如果newWeight > oldWeight ,则不更新paths
-             */
-                //1.先算出newWeight
-                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
-                //2.算出oldWeight
-                E oldWeight = paths.get(edge.to);//null
-                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
-                    paths.put(edge.to,newWeight);
-                }
-
-            }
-
-        }
-
-        return null;
-    }
-
-    private Map.Entry<Vertex<V, E>, E> getMinPath(Map<Vertex<V, E>, E> paths) {
-//        Vertex<V, E> minVertex = null;
-//        E minWeight = null;
-//        paths.forEach((Vertex<V,E> vertex ,E weight)->{
-//            if (weightManager.compare(weight,minWeight)< 0) {
-//                minVertex = vertex;
-//                minWeight = weight;
-//            }
-//        });
-
-//        for (Map.Entry<Vertex<V, E>, E> entry : paths.entrySet()) {
-//            E weight = entry.getValue();
-//            if (minWeight == null) {
-//                minWeight = weight;
-//                minVertex = entry.getKey();
-//            }
-//           else if (weightManager.compare(weight,minWeight)< 0) {
-//                minVertex = entry.getKey();
-//                minWeight = weight;
-//            }
-//        }
-
-        Iterator<Map.Entry<Vertex<V, E>, E>> iterator = paths.entrySet().iterator();
-        Map.Entry<Vertex<V, E>, E> minEntry = iterator.next();
-        while (iterator.hasNext()) {
-            Map.Entry<Vertex<V, E>, E> nextEntry = iterator.next();
-            if (weightManager.compare(nextEntry.getValue(), minEntry.getValue()) < 0) {
-                minEntry = nextEntry;
-            }
-        }
-
-        return minEntry;
-    }
-
 
     private Set<EdgeInfo<V, E>> prim() {
         //边集合 set A
@@ -529,63 +442,171 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
 
-    public void dfs1(V begin) {
+    @Override
+    public Map<V, E> shortestPathWithoutPathInfo(V begin) {
         Vertex<V, E> beginVertex = vertices.get(begin);
-        if (beginVertex == null) return;
-        Set<Vertex<V, E>> visitedVertices = new HashSet<>();
-        dfs1(beginVertex, visitedVertices);
-    }
+        if (beginVertex == null) return null;
+        /**
+         * Map<V,E> paths = new HashMap<>();
+         * paths.put("B",10);
+         * paths.put("D",30);
+         * paths.put("E",100);
+         *
+         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
+         *由于B点还在map中，下次选最短路径时，可能会被重复选择
+         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
+         * Map<V,E> selectedPaths = new HashMap<>();
+         * selectedPaths.put("B",10);
+         * paths.remove("B");
+         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+         */
+        Map<Vertex<V, E>, E> paths = new HashMap<>();
 
-    public void dfs1(Vertex<V, E> beginVertex, Set<Vertex<V, E>> set) {
-        System.out.print(beginVertex.value + " ");
-        set.add(beginVertex);
+        Map<V, E> selectedPaths = new HashMap<>();
+
+        //初始化paths：将A到B,D,E的最短路径信息放入map中
         for (Edge<V, E> edge : beginVertex.outDegrees) {
-            if (set.contains(edge.to)) continue;
-            dfs1(edge.to, set);
+            paths.put(edge.to, edge.weight);
         }
+        while (!paths.isEmpty()) {
+            Map.Entry<Vertex<V, E>, E> minEntry = getMinPathWithoutPathInfo(paths);//("B",10);
+            Vertex<V, E> minVertex = minEntry.getKey();
+            E minWeight = minEntry.getValue();
+            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
+            paths.remove(minVertex);
+            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+            for (Edge<V, E> edge : minVertex.outDegrees) {
 
+            /*Relaxation
+            分别需要得到更新后的weight和之前的weight，然后大小比较
+            //如果newWeight < oldWeight ,则更新paths
+            //如果newWeight > oldWeight ,则不更新paths
+             */
+                //1.先算出newWeight
+                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
+                //2.算出oldWeight
+                E oldWeight = paths.get(edge.to);//null
+                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
+                    paths.put(edge.to, newWeight);
+                }
 
-    }
-
-    /**
-     * 准备一个queue，一个map（顶点，入度信息表），list
-     * 1.把indegree=0的顶点放到queue中，不为0的放到map里
-     * 2. 将queue顶头出队，放入list中，并且更新map表中的inDegree信息
-     * 3.观察map中更新后是否有新的inDegree=0的顶点，如果有，则放入queue中
-     * 4.不断重复2，3直到queue为空
-     */
-    public List<V> topologicalSort(V begin) {
-        Queue<Vertex<V, E>> queue = new LinkedList<>();
-        Map<Vertex<V, E>, Integer> map = new HashMap<>();
-        List<V> list = new LinkedList<>();
-//        Collection<Vertex<V, E>> values = vertices.values();
-//        for (Vertex<V, E> veVertex : values) {
-//            int in = veVertex.inDegrees.size();
-//            if (in == 0) queue.offer(veVertex);
-//            else map.put(veVertex,in);
-//        }
-
-        //1.把inDegree=0的顶点放到queue中，不为0的放到map里
-        vertices.forEach((V v, Vertex<V, E> vertex) -> {
-            int in = vertex.inDegrees.size();
-            if (in == 0) queue.offer(vertex);
-            else map.put(vertex, in);
-        });
-        while (!queue.isEmpty()) {
-            //2.将queue顶头出队，放入list中，并且更新map表中的inDegree信息
-            Vertex<V, E> vertex = queue.poll();
-            list.add(vertex.value);
-            for (Edge<V, E> edge : vertex.outDegrees) {
-                //3.观察map中更新后是否有新的inDegree=0的顶点，如果有，则放入queue中
-                int toIn = map.get(edge.to) - 1;
-                if (toIn == 0) queue.offer(edge.to);
-                map.put(edge.to, toIn);
             }
 
         }
 
-        return list;
+        return selectedPaths;
+    }
 
+    private Map.Entry<Vertex<V, E>, E> getMinPathWithoutPathInfo(Map<Vertex<V, E>, E> paths) {
+        Iterator<Map.Entry<Vertex<V, E>, E>> iterator = paths.entrySet().iterator();
+        Map.Entry<Vertex<V, E>, E> minEntry = iterator.next();
+        while (iterator.hasNext()) {
+            Map.Entry<Vertex<V, E>, E> nextEntry = iterator.next();
+            if (weightManager.compare(nextEntry.getValue(), minEntry.getValue()) < 0) {
+                minEntry = nextEntry;
+            }
+        }
+        return minEntry;
+    }
+
+
+    public Map<V, PathInfo<V, E>> shortestPath(V begin) {
+        return bellmanFord(begin);
+    }
+
+    private Map<V, PathInfo<V, E>> bellmanFord(V begin) {
+        Vertex<V, E> beginVertex = vertices.get(begin);
+        if (beginVertex == null) return null;
+        Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+        selectedPaths.put(beginVertex.value, new PathInfo<>(weightManager.zero()));
+        for (int i = 0; i < vertices.size() - 1; i++) {
+            for (Edge<V, E> edge : edges) {
+
+                PathInfo<V, E> fromPath = selectedPaths.get(edge.from.value);
+
+                if (fromPath == null) continue;
+
+                relaxationForBellmanFord(edge, selectedPaths, selectedPaths.get(edge.from.value));
+            }
+        }
+
+        selectedPaths.remove(beginVertex.value);
+
+        return selectedPaths;
+    }
+
+    private void relaxationForBellmanFord(Edge<V, E> edge, Map<V, PathInfo<V, E>> paths, PathInfo<V, E> fromPath) {
+        //1.先算出newWeight
+        E newWeight = weightManager.add(fromPath.weight, edge.weight);
+        //2.算出oldWeight
+        PathInfo<V, E> oldPath = paths.get(edge.to.value);//null
+        if (oldPath == null || weightManager.compare(newWeight, oldPath.weight) < 0) {
+            PathInfo<V, E> path = new PathInfo<>();
+            path.weight = newWeight;
+            path.edgeInfos.addAll(fromPath.edgeInfos);
+            path.edgeInfos.add(edge.info());
+            paths.put(edge.to.value, path);
+
+        }
+    }
+
+
+    private Map<V, PathInfo<V, E>> dijkstra(V begin) {
+        Vertex<V, E> beginVertex = vertices.get(begin);
+        if (beginVertex == null) return null;
+        Map<Vertex<V, E>, PathInfo<V, E>> paths = new HashMap<>();
+
+        Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+
+        //初始化paths：将A到B,D,E的最短路径信息放入map中
+        for (Edge<V, E> edge : beginVertex.outDegrees) {
+            PathInfo<V, E> path = new PathInfo<>();
+            path.weight = edge.weight;
+            path.edgeInfos.add(edge.info());
+            paths.put(edge.to, path);
+        }
+        while (!paths.isEmpty()) {
+            Map.Entry<Vertex<V, E>, PathInfo<V, E>> minEntry = getMinPath(paths);//("B",10);
+            Vertex<V, E> minVertex = minEntry.getKey();
+            PathInfo<V, E> minPath = minEntry.getValue();
+            selectedPaths.put(minVertex.value, minPath);//B点起飞了
+            paths.remove(minVertex);
+
+            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+            for (Edge<V, E> edge : minVertex.outDegrees) {
+                if (selectedPaths.containsKey(edge.to.value)) continue;
+                relaxationForDijkstra(edge, paths, minPath);
+            }
+        }
+        return selectedPaths;
+    }
+
+    private void relaxationForDijkstra(Edge<V, E> edge, Map<Vertex<V, E>, PathInfo<V, E>> paths, PathInfo<V, E> minPath) {
+        //1.先算出newWeight
+        E newWeight = weightManager.add(minPath.weight, edge.weight);
+        //2.算出oldWeight
+        PathInfo<V, E> oldPath = paths.get(edge.to);//null
+        if (oldPath == null || weightManager.compare(newWeight, oldPath.weight) < 0) {
+            PathInfo<V, E> path = new PathInfo<>();
+            path.weight = newWeight;
+            path.edgeInfos.addAll(minPath.edgeInfos);
+            path.edgeInfos.add(edge.info());
+            paths.put(edge.to, path);
+
+        }
+    }
+
+    private Map.Entry<Vertex<V, E>, PathInfo<V, E>> getMinPath(Map<Vertex<V, E>, PathInfo<V, E>> paths) {
+        Iterator<Map.Entry<Vertex<V, E>, PathInfo<V, E>>> iterator = paths.entrySet().iterator();
+        Map.Entry<Vertex<V, E>, PathInfo<V, E>> minEntry = iterator.next();
+        while (iterator.hasNext()) {
+            Map.Entry<Vertex<V, E>, PathInfo<V, E>> nextEntry = iterator.next();
+            if (weightManager.compare(nextEntry.getValue().weight, minEntry.getValue().weight) < 0) {
+                minEntry = nextEntry;
+            }
+        }
+
+        return minEntry;
     }
 
 

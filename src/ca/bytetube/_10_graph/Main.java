@@ -1,4 +1,5 @@
 package ca.bytetube._10_graph;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,9 +13,18 @@ public class Main {
 //      testBFS_withVisitor();
 //      testTopo();
 //      testMST();
-        testSP();
+//      testSP();
+        testS2();
     }
 
+    public static void testS2() {
+        Graph<Object, Double> graph = directGraph(Data.SP);
+        Map<Object, Graph.PathInfo<Object, Double>> sp = graph.shortestPath("A");
+        sp.forEach((Object from, Graph.PathInfo<Object, Double> paths) ->{
+            System.out.println(from + "---------------------");
+            System.out.println(paths);
+        });
+    }
 
     public static void testSP() {
         Graph<Object, Double> graph = directGraph(Data.SP);
@@ -114,7 +124,7 @@ public class Main {
 
     }
 
-    static Graph.WeightManager<Double> weightManager = new Graph.WeightManager<Double>(){
+    static Graph.WeightManager<Double> weightManager = new Graph.WeightManager<Double>() {
         @Override
         public int compare(Double w1, Double w2) {
             return w1.compareTo(w2);
