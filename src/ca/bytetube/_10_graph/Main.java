@@ -14,12 +14,25 @@ public class Main {
 //      testTopo();
 //      testMST();
 //      testSP();
-        testS2();
+//      testSP2();
+        testMultiSP();
     }
 
-    public static void testS2() {
-        Graph<Object, Double> graph = directGraph(Data.SP);
-        Map<Object, Graph.PathInfo<Object, Double>> sp = graph.shortestPath("A");
+    public static void testMultiSP() {
+        Graph<Object, Double> graph = directGraph(Data.BF_SP);
+        Map<Object, Map<Object, Graph.PathInfo<Object, Double>>> multiSp = graph.shortestPath();
+        multiSp.forEach((Object from, Map<Object, Graph.PathInfo<Object, Double>> paths)->{
+            System.out.println(from + "---------------------");
+            paths.forEach((Object to, Graph.PathInfo<Object, Double> path)->{
+                System.out.println(to +"--------" + path);
+            });
+        });
+
+    }
+
+    public static void testSP2() {
+        Graph<Object, Double> graph = directGraph(Data.NEGATIVE_WEIGHT2);
+        Map<Object, Graph.PathInfo<Object, Double>> sp = graph.shortestPath(0);
         sp.forEach((Object from, Graph.PathInfo<Object, Double> paths) ->{
             System.out.println(from + "---------------------");
             System.out.println(paths);

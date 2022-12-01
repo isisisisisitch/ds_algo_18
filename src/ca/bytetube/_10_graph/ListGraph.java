@@ -378,6 +378,150 @@ public class ListGraph<V, E> extends Graph<V, E> {
         return prim();
     }
 
+
+    @Override
+    public Map<V, E> shortestPathWithoutPathInfo(V begin) {
+        Vertex<V, E> beginVertex = vertices.get(begin);
+        if (beginVertex == null) return null;
+        /**
+         * Map<V,E> paths = new HashMap<>();
+         * paths.put("B",10);
+         * paths.put("D",30);
+         * paths.put("E",100);
+         *
+         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
+         *由于B点还在map中，下次选最短路径时，可能会被重复选择
+         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
+         * Map<V,E> selectedPaths = new HashMap<>();
+         * selectedPaths.put("B",10);
+         * paths.remove("B");
+         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+         */
+        Map<Vertex<V, E>, E> paths = new HashMap<>();
+
+        Map<V, E> selectedPaths = new HashMap<>();
+
+        //初始化paths：将A到B,D,E的最短路径信息放入map中
+        for (Edge<V, E> edge : beginVertex.outDegrees) {
+            paths.put(edge.to, edge.weight);
+        }
+        while (!paths.isEmpty()) {
+            Map.Entry<Vertex<V, E>, E> minEntry = getMinPathWithoutPathInfo(paths);//("B",10);
+            Vertex<V, E> minVertex = minEntry.getKey();
+            E minWeight = minEntry.getValue();
+            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
+            paths.remove(minVertex);
+            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
+            for (Edge<V, E> edge : minVertex.outDegrees) {
+
+            /*Relaxation
+            分别需要得到更新后的weight和之前的weight，然后大小比较
+            //如果newWeight < oldWeight ,则更新paths
+            //如果newWeight > oldWeight ,则不更新paths
+             */
+                //1.先算出newWeight
+                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
+                //2.算出oldWeight
+                E oldWeight = paths.get(edge.to);//null
+                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
+                    paths.put(edge.to, newWeight);
+                }
+
+            }
+
+        }
+
+        return selectedPaths;
+    }
+
+    public Map<V, PathInfo<V, E>> shortestPath(V begin) {
+        return bellmanFord(begin);
+    }
+
+    @Override
+    public Map<V, Map<V, PathInfo<V, E>>> shortestPath() {
+        Map<V, Map<V, PathInfo<V, E>>> paths = new HashMap<>();
+
+        //paths 初始化 默认图中点与点之间直接的连线是最短路径
+        for (Edge<V,E> edge : edges) {
+              //终点                                   //起点
+            Map<V, PathInfo<V, E>> map = paths.get(edge.from.value);
+            if (map == null) {
+                map  = new HashMap<>();
+                paths.put(edge.from.value,map);//(A,map(null))
+            }
+
+            PathInfo<V,E> pathInfo = new PathInfo<>(edge.weight);
+            pathInfo.edgeInfos.add(edge.info());
+            map.put(edge.to.value,pathInfo);
+           // paths.put(edge.from.value,map);
+
+        }
+
+        vertices.forEach((V v2, Vertex<V, E> vertex2) ->{
+
+            vertices.forEach((V v1, Vertex<V, E> vertex1) ->{
+
+                vertices.forEach((V v3, Vertex<V, E> vertex3) ->{
+                    //v1--->v2  //v2--->v3  //v1--->v3
+                    //v1--->v2
+                    PathInfo<V, E> path12 = getPathInfo(v1,v2,paths);
+
+                    if (path12 == null) return;
+                    //v2--->v3
+                    PathInfo<V, E> path23 = getPathInfo(v2,v3,paths);
+                    if (path23 == null) return;
+                    E newWeight = weightManager.add(path12.weight, path23.weight);
+
+                    //v1--->v3
+                    PathInfo<V, E> path13 = getPathInfo(v1,v3,paths);
+
+                    if (path13 != null && weightManager.compare(newWeight, path13.weight) >= 0) return;
+                    if (path13 == null){
+                        path13 = new PathInfo<>();
+                       paths.get(v1).put(v3,path13);
+
+                    } else path13.edgeInfos.clear();
+
+                    path13.weight = newWeight;
+                    //1-2-3 1-3
+                    path13.edgeInfos.addAll(path12.edgeInfos);
+
+                    path13.edgeInfos.addAll(path23.edgeInfos);
+
+                });
+            });
+        });
+
+        return paths;
+    }
+
+    private PathInfo<V,E> getPathInfo(V v1, V v2, Map<V, Map<V, PathInfo<V,E>>> paths) {
+        Map<V, PathInfo<V, E>> infoMap = paths.get(v1);
+        if (infoMap == null) {
+            return null;
+        }
+       return infoMap.get(v2);
+    }
+
+
+    public void printGraph() {
+        System.out.println("[vertex]---------------------");
+        vertices.forEach((V v, Vertex<V, E> vertex) -> {
+            System.out.println(v);
+            System.out.println("out---------------------");
+            System.out.println(vertex.outDegrees);
+            System.out.println("in---------------------");
+            System.out.println(vertex.inDegrees);
+        });
+        System.out.println("[edge]---------------------");
+        edges.forEach((Edge<V, E> edge) -> {
+            System.out.println(edge);
+        });
+
+    }
+
+
     private Set<EdgeInfo<V, E>> prim() {
         //边集合 set A
         Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();
@@ -442,61 +586,6 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
 
-    @Override
-    public Map<V, E> shortestPathWithoutPathInfo(V begin) {
-        Vertex<V, E> beginVertex = vertices.get(begin);
-        if (beginVertex == null) return null;
-        /**
-         * Map<V,E> paths = new HashMap<>();
-         * paths.put("B",10);
-         * paths.put("D",30);
-         * paths.put("E",100);
-         *
-         * 从paths中找到第一个起飞点：找到从A点到B,D,E的最短路径：("B",10)
-         *由于B点还在map中，下次选最短路径时，可能会被重复选择
-         * 所以一个map不够，需要再做一个map，用来保留已经走过的路
-         * Map<V,E> selectedPaths = new HashMap<>();
-         * selectedPaths.put("B",10);
-         * paths.remove("B");
-         * 对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
-         */
-        Map<Vertex<V, E>, E> paths = new HashMap<>();
-
-        Map<V, E> selectedPaths = new HashMap<>();
-
-        //初始化paths：将A到B,D,E的最短路径信息放入map中
-        for (Edge<V, E> edge : beginVertex.outDegrees) {
-            paths.put(edge.to, edge.weight);
-        }
-        while (!paths.isEmpty()) {
-            Map.Entry<Vertex<V, E>, E> minEntry = getMinPathWithoutPathInfo(paths);//("B",10);
-            Vertex<V, E> minVertex = minEntry.getKey();
-            E minWeight = minEntry.getValue();
-            selectedPaths.put(minVertex.value, minWeight);//B点起飞了
-            paths.remove(minVertex);
-            //对B点所有的outEdges做一次松弛操作（更新其他点到源点A的最短路径）
-            for (Edge<V, E> edge : minVertex.outDegrees) {
-
-            /*Relaxation
-            分别需要得到更新后的weight和之前的weight，然后大小比较
-            //如果newWeight < oldWeight ,则更新paths
-            //如果newWeight > oldWeight ,则不更新paths
-             */
-                //1.先算出newWeight
-                E newWeight = weightManager.add(minEntry.getValue(), edge.weight);
-                //2.算出oldWeight
-                E oldWeight = paths.get(edge.to);//null
-                if (oldWeight == null || weightManager.compare(newWeight, oldWeight) < 0) {
-                    paths.put(edge.to, newWeight);
-                }
-
-            }
-
-        }
-
-        return selectedPaths;
-    }
-
     private Map.Entry<Vertex<V, E>, E> getMinPathWithoutPathInfo(Map<Vertex<V, E>, E> paths) {
         Iterator<Map.Entry<Vertex<V, E>, E>> iterator = paths.entrySet().iterator();
         Map.Entry<Vertex<V, E>, E> minEntry = iterator.next();
@@ -510,9 +599,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
 
-    public Map<V, PathInfo<V, E>> shortestPath(V begin) {
-        return bellmanFord(begin);
-    }
+
 
     private Map<V, PathInfo<V, E>> bellmanFord(V begin) {
         Vertex<V, E> beginVertex = vertices.get(begin);
@@ -530,24 +617,45 @@ public class ListGraph<V, E> extends Graph<V, E> {
             }
         }
 
+        for (Edge<V, E> edge : edges) {
+
+            PathInfo<V, E> fromPath = selectedPaths.get(edge.from.value);
+
+            if (fromPath == null) continue;
+
+            if( relaxationForBellmanFord(edge, selectedPaths, selectedPaths.get(edge.from.value))){
+                try {
+                    throw new Exception("there is a negative cycle! ");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
         selectedPaths.remove(beginVertex.value);
 
         return selectedPaths;
     }
 
-    private void relaxationForBellmanFord(Edge<V, E> edge, Map<V, PathInfo<V, E>> paths, PathInfo<V, E> fromPath) {
+    private boolean relaxationForBellmanFord(Edge<V, E> edge, Map<V, PathInfo<V, E>> paths, PathInfo<V, E> fromPath) {
         //1.先算出newWeight
         E newWeight = weightManager.add(fromPath.weight, edge.weight);
         //2.算出oldWeight
         PathInfo<V, E> oldPath = paths.get(edge.to.value);//null
-        if (oldPath == null || weightManager.compare(newWeight, oldPath.weight) < 0) {
-            PathInfo<V, E> path = new PathInfo<>();
-            path.weight = newWeight;
-            path.edgeInfos.addAll(fromPath.edgeInfos);
-            path.edgeInfos.add(edge.info());
-            paths.put(edge.to.value, path);
+        if (oldPath != null && weightManager.compare(newWeight, oldPath.weight) >= 0) return false;
+        if (oldPath == null){
+            oldPath = new PathInfo<>();
+            paths.put(edge.to.value, oldPath);
 
-        }
+        } else oldPath.edgeInfos.clear();
+
+        oldPath.weight = newWeight;
+        oldPath.edgeInfos.addAll(fromPath.edgeInfos);
+        oldPath.edgeInfos.add(edge.info());
+
+
+        return true;
+
     }
 
 
@@ -607,23 +715,6 @@ public class ListGraph<V, E> extends Graph<V, E> {
         }
 
         return minEntry;
-    }
-
-
-    public void printGraph() {
-        System.out.println("[vertex]---------------------");
-        vertices.forEach((V v, Vertex<V, E> vertex) -> {
-            System.out.println(v);
-            System.out.println("out---------------------");
-            System.out.println(vertex.outDegrees);
-            System.out.println("in---------------------");
-            System.out.println(vertex.inDegrees);
-        });
-        System.out.println("[edge]---------------------");
-        edges.forEach((Edge<V, E> edge) -> {
-            System.out.println(edge);
-        });
-
     }
 
 
