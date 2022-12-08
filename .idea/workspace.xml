@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/ClimbStairs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Fib.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/NumsOfCow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Hanoi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/PrintSubString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/RecursiveToNonRecursive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/TailCall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Fib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Fib.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BasicCalculator">
+  <component name="RunManager" selected="Application.TailCall">
     <configuration name="BasicCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._02_stack.BasicCalculator" />
       <module name="ds_algo_18" />
@@ -103,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._09_hash.Main" />
+    <configuration name="Hanoi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._11_recursion.Hanoi" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._09_hash.*" />
+          <option name="PATTERN" value="ca.bytetube._11_recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +118,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._10_graph.Main" />
+    <configuration name="PrintSubString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._11_recursion.PrintSubString" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._10_graph.*" />
+          <option name="PATTERN" value="ca.bytetube._11_recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,12 +131,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Person" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._09_hash.Person" />
+    <configuration name="RecursiveToNonRecursive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._11_recursion.RecursiveToNonRecursive" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._09_hash.*" />
+          <option name="PATTERN" value="ca.bytetube._11_recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,12 +144,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrintChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._00_array.PrintChessBoard" />
+    <configuration name="TailCall" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._11_recursion.TailCall" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._00_leetcode._00_array.*" />
+          <option name="PATTERN" value="ca.bytetube._11_recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TailCall" />
+        <item itemvalue="Application.RecursiveToNonRecursive" />
+        <item itemvalue="Application.PrintSubString" />
+        <item itemvalue="Application.Hanoi" />
         <item itemvalue="Application.BasicCalculator" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.PrintChessBoard" />
-        <item itemvalue="Application.Person" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +206,8 @@
       <workItem from="1669506494734" duration="6658000" />
       <workItem from="1669766764003" duration="10328000" />
       <workItem from="1669849861452" duration="13040000" />
-      <workItem from="1670287775001" duration="7524000" />
+      <workItem from="1670287775001" duration="8578000" />
+      <workItem from="1670451866865" duration="10132000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -367,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669866020856</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added recursion">
+      <created>1670297598514</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670297598514</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +420,8 @@
     <MESSAGE value="added graph sp---Dijkstra" />
     <MESSAGE value="added graph sp---Bellman-Ford" />
     <MESSAGE value="added graph sp---floyed" />
-    <option name="LAST_COMMIT_MESSAGE" value="added graph sp---floyed" />
+    <MESSAGE value="added recursion" />
+    <option name="LAST_COMMIT_MESSAGE" value="added recursion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -474,6 +485,11 @@
           <url>file://$PROJECT_DIR$/src/ca/bytetube/_00_leetcode/_02_stack/BasicCalculator.java</url>
           <line>16</line>
           <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ca/bytetube/_11_recursion/RecursiveToNonRecursive.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

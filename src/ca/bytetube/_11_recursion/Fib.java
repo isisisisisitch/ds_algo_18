@@ -16,6 +16,37 @@ public class Fib {
         return fib0(n - 1) + fib0(n - 2);
     }
 
+    public int fib6(int n){
+        if (n <= 1) return n;
+       return fib6(n,0,1);
+    }
+
+
+    public int fib6(int n, int first, int second){
+        if (n <= 1) return second;
+        return  fib6(n-1,second,first + second);
+    }
+
+    public  int fib5(int n) {
+        if (n < 0 || n > 30) {
+            throw new RuntimeException("illegal input!");
+        }
+        if (n <= 1) return n;
+
+        int first = 0;
+        int second = 1;
+
+        //loop
+        for (int i = 0; i < n - 1; i++) {
+            int sum = first + second;
+            first = second;
+            second = sum;
+
+        }
+
+        return second;
+    }
+
 
     public int fib1(int n) {
         if (n < 0 || n > 30) throw new RuntimeException("illegal input!");
@@ -80,25 +111,7 @@ public class Fib {
         return arr[n & 1];
     }
 
-    public  int fib(int n) {
-        if (n < 0 || n > 30) {
-            throw new RuntimeException("illegal input!");
-        }
-        if (n <= 1) return n;
 
-        int first = 0;
-        int second = 1;
-
-        //loop
-        for (int i = 0; i < n - 1; i++) {
-            int sum = first + second;
-            first = second;
-            second = sum;
-
-        }
-
-        return second;
-    }
 
 
 }
