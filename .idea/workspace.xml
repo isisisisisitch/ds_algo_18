@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Hanoi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/PrintSubString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/RecursiveToNonRecursive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/TailCall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_12_backTracking/NQueens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Fib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_11_recursion/Fib.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,13 +87,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TailCall">
-    <configuration name="BasicCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._00_leetcode._02_stack.BasicCalculator" />
+  <component name="RunManager" selected="Application.NQueens">
+    <configuration name="Hanoi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._11_recursion.Hanoi" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._00_leetcode._02_stack.*" />
+          <option name="PATTERN" value="ca.bytetube._11_recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Hanoi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._11_recursion.Hanoi" />
+    <configuration name="NQueens" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._12_backTracking.NQueens" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._11_recursion.*" />
+          <option name="PATTERN" value="ca.bytetube._12_backTracking.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NQueens" />
         <item itemvalue="Application.TailCall" />
         <item itemvalue="Application.RecursiveToNonRecursive" />
         <item itemvalue="Application.PrintSubString" />
         <item itemvalue="Application.Hanoi" />
-        <item itemvalue="Application.BasicCalculator" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +203,8 @@
       <workItem from="1669766764003" duration="10328000" />
       <workItem from="1669849861452" duration="13040000" />
       <workItem from="1670287775001" duration="8578000" />
-      <workItem from="1670451866865" duration="10132000" />
+      <workItem from="1670451866865" duration="11960000" />
+      <workItem from="1670877485379" duration="5257000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -377,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670297598514</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added tail recursion">
+      <created>1670470527850</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1670470527850</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +425,8 @@
     <MESSAGE value="added graph sp---Bellman-Ford" />
     <MESSAGE value="added graph sp---floyed" />
     <MESSAGE value="added recursion" />
-    <option name="LAST_COMMIT_MESSAGE" value="added recursion" />
+    <MESSAGE value="added tail recursion" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tail recursion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
