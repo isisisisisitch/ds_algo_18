@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/CoinsChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/Knapsack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/Pirates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/SmallestLexicographicalOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/IPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_13_greedy/LessMoney.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_14_divide/GetMaxFromArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_14_divide/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_14_divide/MaximumSubarray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,9 +91,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SmallestLexicographicalOrder">
+  <component name="RunManager" selected="Application.IPO">
     <configuration name="CoinsChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._13_greedy.CoinsChange" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._13_greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IPO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._13_greedy.IPO" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
@@ -118,21 +131,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NQueens" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._12_backTracking.NQueens" />
-      <module name="ds_algo_18" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.bytetube._12_backTracking.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Pirates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._13_greedy.Pirates" />
+    <configuration name="LessMoney" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._13_greedy.LessMoney" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
@@ -159,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IPO" />
+        <item itemvalue="Application.LessMoney" />
         <item itemvalue="Application.SmallestLexicographicalOrder" />
         <item itemvalue="Application.Knapsack" />
         <item itemvalue="Application.CoinsChange" />
-        <item itemvalue="Application.Pirates" />
-        <item itemvalue="Application.NQueens" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +209,8 @@
       <workItem from="1670287775001" duration="8578000" />
       <workItem from="1670451866865" duration="11960000" />
       <workItem from="1670877485379" duration="5979000" />
-      <workItem from="1671150819894" duration="7426000" />
+      <workItem from="1671150819894" duration="8006000" />
+      <workItem from="1671640025334" duration="14059000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -393,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670902106320</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added greedy">
+      <created>1671160251323</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1671160251323</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +421,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added SingleLinkedList" />
     <MESSAGE value="added LinkedList" />
     <MESSAGE value="added SingleCircularLinkedList and DoubleCircularLinkedList" />
     <MESSAGE value="added list questions" />
@@ -438,7 +445,8 @@
     <MESSAGE value="added recursion" />
     <MESSAGE value="added tail recursion" />
     <MESSAGE value="added back tracking" />
-    <option name="LAST_COMMIT_MESSAGE" value="added back tracking" />
+    <MESSAGE value="added greedy" />
+    <option name="LAST_COMMIT_MESSAGE" value="added greedy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
