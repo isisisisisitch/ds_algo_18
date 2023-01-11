@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/CoinChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/FindAimInSumArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/MaximumSubarray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/LCS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/LIS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FindAimInSumArray">
+  <component name="RunManager" selected="Application.LCS">
     <configuration name="CoinChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.CoinChange" />
       <module name="ds_algo_18" />
@@ -116,12 +115,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IPO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._13_greedy.IPO" />
+    <configuration name="LCS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.LCS" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.bytetube._13_greedy.*" />
+          <option name="PATTERN" value="ca.bytetube._15_dp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LCS" />
         <item itemvalue="Application.FindAimInSumArray" />
         <item itemvalue="Application.CoinChange" />
         <item itemvalue="Application.MinPathSum" />
         <item itemvalue="Application.SmallSum" />
-        <item itemvalue="Application.IPO" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +209,9 @@
       <workItem from="1671150819894" duration="8006000" />
       <workItem from="1671640025334" duration="14182000" />
       <workItem from="1672693875605" duration="8091000" />
-      <workItem from="1672872477504" duration="9686000" />
+      <workItem from="1672872477504" duration="10003000" />
+      <workItem from="1672961540451" duration="3258000" />
+      <workItem from="1673393123592" duration="7652000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -415,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672717747707</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added dp1 questions">
+      <created>1672889949544</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1672889949544</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added list questions" />
     <MESSAGE value="added list questions_2" />
     <MESSAGE value="added array questions" />
     <MESSAGE value="added stack and queue" />
@@ -460,7 +467,8 @@
     <MESSAGE value="added greedy" />
     <MESSAGE value="added greedy questions and divide" />
     <MESSAGE value="added divide and dp" />
-    <option name="LAST_COMMIT_MESSAGE" value="added divide and dp" />
+    <MESSAGE value="added dp1 questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dp1 questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
