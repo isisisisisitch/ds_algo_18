@@ -6,8 +6,16 @@ public class FindAimInSumArray {
         System.out.println(findAimInSumArray(arr,16));
     }
 
-
     public static boolean findAimInSumArray(int[] arr, int aim) {
+
+        boolean[][] dp = new boolean[arr.length + 1][aim + 1];
+
+
+        return dp[0][0];
+    }
+
+
+    public static boolean findAimInSumArray1(int[] arr, int aim) {
         return findAimInSumArray(arr, 0, 0, aim);
     }
 

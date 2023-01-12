@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e71b1b7-676f-4334-95be-a39e03d7fca9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/LCS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/LIS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/Knapsack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/LongestCommonSubstring.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/FindAimInSumArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bytetube/_15_dp/FindAimInSumArray.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LCS">
+  <component name="RunManager" selected="Application.LongestCommonSubstring">
     <configuration name="CoinChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.CoinChange" />
       <module name="ds_algo_18" />
@@ -115,6 +116,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Knapsack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.Knapsack" />
+      <module name="ds_algo_18" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.bytetube._15_dp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LCS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.LCS" />
       <module name="ds_algo_18" />
@@ -128,8 +142,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinPathSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.MinPathSum" />
+    <configuration name="LongestCommonSubstring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.bytetube._15_dp.LongestCommonSubstring" />
       <module name="ds_algo_18" />
       <extension name="coverage">
         <pattern>
@@ -141,26 +155,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmallSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ca.bytetube._14_divide.SmallSum" />
-      <module name="ds_algo_18" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.bytetube._14_divide.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LongestCommonSubstring" />
+        <item itemvalue="Application.Knapsack" />
         <item itemvalue="Application.LCS" />
         <item itemvalue="Application.FindAimInSumArray" />
         <item itemvalue="Application.CoinChange" />
-        <item itemvalue="Application.MinPathSum" />
-        <item itemvalue="Application.SmallSum" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +212,7 @@
       <workItem from="1672693875605" duration="8091000" />
       <workItem from="1672872477504" duration="10003000" />
       <workItem from="1672961540451" duration="3258000" />
-      <workItem from="1673393123592" duration="7652000" />
+      <workItem from="1673393123592" duration="16106000" />
     </task>
     <task id="LOCAL-00001" summary="added arrayList">
       <created>1662431916463</created>
@@ -423,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672889949544</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added dp2 questions">
+      <created>1673407696510</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1673407696511</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +451,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added list questions_2" />
     <MESSAGE value="added array questions" />
     <MESSAGE value="added stack and queue" />
     <MESSAGE value="added stack and queue questions" />
@@ -468,7 +475,8 @@
     <MESSAGE value="added greedy questions and divide" />
     <MESSAGE value="added divide and dp" />
     <MESSAGE value="added dp1 questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dp1 questions" />
+    <MESSAGE value="added dp2 questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dp2 questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
